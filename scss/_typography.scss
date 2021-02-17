@@ -1,0 +1,31 @@
+body{
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif!important;
+}
+
+$primary: #130b00;
+$secondary: #ad6500;
+$tertiary: #cfa66d;
+
+.brand{
+    font-size: 1.5rem;
+}
+
+.search-custom{
+    background-image: none!important;
+}
+
+.toggler-custom{
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='rgba(173, 101, 0)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>")!important;
+}
+
+.bg-tertiary{
+    background-color: $tertiary;
+}
+
+h1{
+    font-size: 1.7rem!important;
+}
+
+h2{
+    font-size: 1.3rem!important;
+}
