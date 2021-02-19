@@ -34,7 +34,7 @@
                     </div>
                     <form class="form-inline collapse navbar-collapse" id="navbarSearch">
                         <input class="form-control" id="searchInput" type="text" placeholder="Rechercher.." aria-label="Search">
-                        <button class="btn bg-secondary text-primary d-none d-lg-block" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <button class="btn bg-secondary text-primary d-none d-lg-block" id="search-submit" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                           </svg></button>
                     </form>
@@ -44,7 +44,7 @@
                           </svg></span>
                     </button>
                     <a class="nav-link ml-auto" href="cart.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="auto" fill="currentColor" class="bi bi-basket-fill text-secondary" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-basket-fill text-secondary" viewBox="0 0 16 16">
                             <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
                           </svg>
                         <span class="badge badge-light ml-n3">3</span>
@@ -108,56 +108,53 @@
         <div class="row" id="cameraList">
             <div class="col-12 col-md-6 col-lg-4 mt-5">
                 <div class="card bg-primary text-secondary">
-                    <img src="./images/vcam_1.jpg" alt="premier modèle de Caméra vintage">
+                    <img class="camera-picture" src="" alt="premier modèle de Caméra vintage">
                     <div class="card-body text-center">
-                       <h2 class="card-title font-weight-bold mb-3" id="camera-name-1">Caméra 1</h2>
-                       <p class="card-text" id="camera-description-1">Description de la caméra</p>
-                       <p class="card-text h5 font-weight-bold" id="camera-price-1">1 000 €</p>
-                       <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>
-                    </div>
+                        <h2 class="card-title font-weight-bold mb-3 camera-name text-uppercase" id="camera-name-0"></h2>
+                        <p class="card-text camera-description text-left h6" id="camera-description-0"></p>
+                        <p class="card-text h5 font-weight-bold text-right my-3 text-tertiary" id="camera-price-0"><span class="camera-price"></span><span> €</span></p>
+                        <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mt-5">
                 <div class="card bg-primary text-secondary">
-                    <img src="./images/vcam_2.jpg" alt="deuxième modèle de Caméra vintage">
+                    <img class="camera-picture" src="" alt="deuxième modèle de Caméra vintage">
                     <div class="card-body text-center">
-                       <h2 class="card-title font-weight-bold mb-3" id="camera-name-2">Caméra 2</h2>
-                       <p class="card-text" id="camera-description-2">Description de la caméra</p>
-                       <p class="card-text h5 font-weight-bold" id="camera-price-2">1 000 €</p>
-                       <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>
-                    </div>
+                        <h2 class="card-title font-weight-bold mb-3 camera-name text-uppercase" id="camera-name-1"></h2>
+                        <p class="card-text camera-description text-left h6" id="camera-description-1"></p>
+                        <p class="card-text h5 font-weight-bold text-right my-3 text-tertiary" id="camera-price-1"><span class="camera-price"></span><span> €</span></p>
+                        <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mt-5">
                 <div class="card bg-primary text-secondary">
-                    <img src="./images/vcam_3.jpg" alt="troisième modèle de Caméra vintage">
+                    <img class="camera-picture" src="" alt="troisième modèle de Caméra vintage">
                     <div class="card-body text-center">
-                       <h2 class="card-title font-weight-bold mb-3" id="camera-name-3">Caméra 3</h2>
-                       <p class="card-text" id="camera-description-3">Description de la caméra</p>
-                       <p class="card-text h5 font-weight-bold" id="camera-price-3">1 000 €</p>
-                       <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>
-                    </div>
+                        <h2 class="card-title font-weight-bold mb-3 camera-name text-uppercase" id="camera-name-2"></h2>
+                        <p class="card-text camera-description text-left h6" id="camera-description-2"></p>
+                        <p class="card-text h5 font-weight-bold text-right my-3 text-tertiary" id="camera-price-2"><span class="camera-price"></span><span> €</span></p>
+                        <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4 mt-5">
                 <div class="card bg-primary text-secondary">
-                    <img src="./images/vcam_4.jpg" alt="quatrième modèle de Caméra vintage">
+                    <img class="camera-picture" src="" alt="quatrième modèle de Caméra vintage">
                     <div class="card-body text-center">
-                       <h2 class="card-title font-weight-bold mb-3" id="camera-name-4">Caméra 4</h2>
-                       <p class="card-text" id="camera-description-4">Description de la caméra</p>
-                       <p class="card-text h5 font-weight-bold" id="camera-price-4">1 000 €</p>
-                       <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-                <div class="card bg-primary text-secondary">
-                    <img src="./images/vcam_5.jpg" alt="cinquième modèle de Caméra vintage">
-                    <div class="card-body text-center">
-                        <h2 class="card-title font-weight-bold mb-3" id="camera-name-5">Caméra 5</h2>
-                        <p class="card-text" id="camera-description-5">Description de la caméra</p>
-                        <p class="card-text h5 font-weight-bold" id="camera-price-5">1 000 €</p>
+                        <h2 class="card-title font-weight-bold mb-3 camera-name text-uppercase" id="camera-name-3"></h2>
+                        <p class="card-text camera-description text-left h6" id="camera-description-3"></p>
+                        <p class="card-text h5 font-weight-bold text-right my-3 text-tertiary" id="camera-price-3"><span class="camera-price"></span><span> €</span></p>
                         <a href="product.html" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 mt-5">
+                <div class="card bg-primary text-secondary">
+                    <img class="camera-picture" src="" alt="cinquième modèle de Caméra vintage">
+                    <div class="card-body text-center">
+                        <h2 class="card-title font-weight-bold mb-3 camera-name text-uppercase" id="camera-name-4"></h2>
+                        <p class="card-text camera-description text-left h6" id="camera-description-4"></p>
+                        <p class="card-text h5 font-weight-bold text-right my-3 text-tertiary" id="camera-price-4"><span class="camera-price"></span><span> €</span></p>
+                        <a href="" id="btn-test" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>
                     </div>
                 </div>
             </div>

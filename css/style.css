@@ -19,6 +19,10 @@ body {
   background-color: #cfa66d;
 }
 
+.text-tertiary {
+  color: #cfa66d;
+}
+
 h1 {
   font-size: 1.7rem !important;
 }
