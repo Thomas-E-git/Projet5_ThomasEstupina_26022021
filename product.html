@@ -47,7 +47,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-basket-fill text-secondary" viewBox="0 0 16 16">
                             <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
                           </svg>
-                        <span class="badge badge-light ml-n3">3</span>
+                        <span id="cart-number" class="badge badge-light ml-n3">0</span>
                     </a>
                 </nav>
             </div>
@@ -71,7 +71,7 @@
     </div>
     <!-- division produit -->
     <div class="container my-3">
-        <a class="h5" href="index.html">Retour</a>
+        <a class="btn btn-secondary text-primary font-weight-bold h5" role="button" href="index.html">Retour</a>
         <div class="row mt-3">
             <div class="card col-12 col-md-6 mb-3">
                 <img src="" alt="Photo de la caméra séléctionnée" id="camera-picture">
@@ -86,12 +86,9 @@
                     <option class="camera-lens" id="lens-2"></option>
                     <option class="camera-lens" id="lens-3"></option>
                 </select>
-                <a type="button" href="" class="btn btn-secondary text-primary col-10 col-lg-5 mt-3 px-0"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-basket-fill text-primary mr-2" viewBox="0 0 16 16">
+                <a type="button" id="add-cart" class="btn btn-secondary text-primary col-10 col-lg-5 mt-3 px-0 font-weight-bold"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-basket-fill text-primary mr-2" viewBox="0 0 16 16">
                     <path d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z"/>
                   </svg>Ajouter au panier</a>
-                <a type="button" href="cart.html" class="btn btn-secondary text-primary col-10 col-lg-5 mt-3 px-0"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-credit-card-2-back-fill text-primary mr-2" viewBox="0 0 16 16">
-                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2zM0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z"/>
-                  </svg>Achat rapide</a>
             </div>
         </div>
     </div>

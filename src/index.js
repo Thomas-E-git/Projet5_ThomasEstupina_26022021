@@ -31,3 +31,12 @@ const searchSubmitButton = document.getElementById("search-submit")
 searchSubmitButton.addEventListener('click', function(event) {
     event.preventDefault();
 })
+
+/* function to keep cart numbers in index.html page */
+function onLoadCameraCartNumber() {
+    let cameraNumbers = localStorage.getItem('cameraInCartNumbers');
+    if(cameraNumbers) {
+        document.getElementById("cart-number").textContent = cameraNumbers;
+    }
+};
+onLoadCameraCartNumber();
