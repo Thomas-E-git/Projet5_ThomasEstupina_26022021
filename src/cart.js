@@ -22,9 +22,10 @@ else {
     localStorage.setItem("cart", JSON.stringify(cartSet));
 };
 
+/* Get Cart from localstorage */
 let cameraList = JSON.parse(localStorage.getItem("cart"));
 
-
+/* Create HTML objects in the cart division */
 function cartInnerHtml (){
     let cameraListDisplay = "";
     Object.values(cameraList).map(camera => {
@@ -46,6 +47,7 @@ function cartInnerHtml (){
 }
 cartInnerHtml();
 
+/* Calculate and set the total amount of the cart */
 function generateTotal() {
     let amounts = [];
     let totalAmount = 0;
@@ -62,8 +64,10 @@ function generateTotal() {
     document.getElementById("TVA").innerHTML = Math.round((totalAmount - (totalAmount / (1+0.2)))) + " €" ;
 }
 generateTotal();
-  
+
+/* Select each Camera in the cameralist(cart) */
 Object.values(cameraList).map(camera => { 
+    /* decrease the number of cameras with "less" button */
     let lessButtonsCart = document.getElementById(camera._id + "less");
     lessButtonsCart.addEventListener('click', function() {
         let actualCameraNumber = JSON.parse(localStorage.getItem(camera._id));
@@ -78,6 +82,7 @@ Object.values(cameraList).map(camera => {
             generateTotal();
         }       
     })
+    /* increase the number of cameras with "more" button */
     let moreButtonsCart = document.getElementById(camera._id + "more");
     moreButtonsCart.addEventListener('click', function() {
         let actualCameraNumber = JSON.parse(localStorage.getItem(camera._id));
@@ -90,6 +95,7 @@ Object.values(cameraList).map(camera => {
         onLoadCameraCartNumber();
         generateTotal();         
     })
+    /* delete a camera of the cart and reload the total number of cameras in cart */
     let deleteButton = document.getElementById(camera._id + "del");
     deleteButton.addEventListener('click', function() {
         actualCameraList = JSON.parse(localStorage.getItem("cart"));
@@ -105,6 +111,7 @@ Object.values(cameraList).map(camera => {
     })
 });
 
+/* Disable order button if cart is empty, also display a message "cart is empty" and an instruction on order button's if the cart is empty */
 let cartInfo = JSON.parse(localStorage.getItem("cameraInCartNumbers"))
 if (cartInfo == null || cartInfo == 0) {
     document.getElementById("cart-is-empty").innerHTML = `Votre panier est vide <i class="fas fa-sad-tear text-secondary ml-1"></i> `;
@@ -114,24 +121,28 @@ if (cartInfo == null || cartInfo == 0) {
     document.getElementById("order-button").setAttribute("title", "Veuillez sélectionner des produits avant de passer votre commande");
 };
 
+/* function to empty the cart on click with an alert */
 document.getElementById("empty-cart").addEventListener('click', function() {
-    if( confirm( "Êtes-vous sûr de vouloir vider votre panier ? Vous perdrez toute votre séléction actuelle" )) {
+    if( confirm( "Êtes-vous sûr de vouloir vider votre panier ? Vous perdrez toute votre sélection actuelle" )) {
         localStorage.clear();
         location.reload();
     }
 })
 
-//order page//
+//// order ////
 
+/* Set variables which will contain order informations */
 let productPrices = [];
 let totalCost = 0;
 let orderInformations = {};
 
+/* On click event for the submit button of the form */
 document.getElementById("contact-form").addEventListener('submit', function(e) {
     let contactObject = {};
     let productsList = JSON.parse(localStorage.getItem("cart"));
     let productsListId = [];
 
+    /* Return promise with an array of products in cart's ids */
     getIds = () => {
         return new Promise((resolve) => {
             for (i in productsList) {
@@ -141,6 +152,7 @@ document.getElementById("contact-form").addEventListener('submit', function(e) {
         });
     };
 
+    /* Return promise with an object containing contact informations */
     createContactObject = () => {
         return new Promise((resolve) => {
             contactObject = {
@@ -154,10 +166,11 @@ document.getElementById("contact-form").addEventListener('submit', function(e) {
         });
     };
 
+    /* Prevent default tasks of submit button, stop the reload */
     e.preventDefault();
     e.stopPropagation();
     
-    
+    /* Async function to post all informations we need about the order after promises resolve */
     async function postOrder() {
         var post = new XMLHttpRequest();
         let productsListId = await getIds();
@@ -180,6 +193,7 @@ document.getElementById("contact-form").addEventListener('submit', function(e) {
     postOrder();
 })
 
+/* Calculate current total amount of the order */
 function calculateTotalCost(object) {
     for (let i in object.products) {
         productPrices.push((object.products[i].price / 100) * JSON.parse(localStorage.getItem(object.products[i]._id)));
