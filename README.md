@@ -16,5 +16,5 @@ console when the server starts, e.g. `Listening on port 3001`.
 
 ### Launch ###
 
-Run `npm install`. You will be able to use the website and API.
+Run `npm start`. You will be able to use the website and API.
 
