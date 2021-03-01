@@ -5,7 +5,7 @@ searchSubmitButton.addEventListener('click', function(event) {
     event.preventDefault();
 })
 
-/* function to keep cart numbers in index.html page */
+/* function to keep cart numbers in cart.html page */
 function onLoadCameraCartNumber() {
     let cameraNumbers = localStorage.getItem('cameraInCartNumbers');
     if(cameraNumbers) {
