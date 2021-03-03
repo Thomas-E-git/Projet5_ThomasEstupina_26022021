@@ -16,7 +16,7 @@
             <div class="row">
                 <nav class="col navbar navbar-expand-lg navbar-dark py-0">
                     <a class="navbar-brand" href="index.html">
-                        <img src="images/logo.png" alt="Logo du site Oricamera" width="50" height="auto" class="pt-2">
+                        <img src="images/logo.png" alt="Logo du site Oricamera" width="50" class="pt-2">
                         <span class="brand ml-n1">ricamera</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -100,7 +100,7 @@
         <div class="col">
             <form class="row" id="contact-form">
                 <div class="col-12 col-md-6 text-primary font-weight-bold was-validated">
-                    <legend class="my-3 my-md-5">Renseignez vos informations</legend>
+                    <h1 class="my-3 my-md-5 h6">Renseignez vos informations</h1>
                     <div class="form-group">
                         <label for="last-name">Nom :</label>
                         <input type="text" class="form-control border-secondary" id="last-name" placeholder="Nom de famille" required pattern="[a-zA-Z'-]+[a-zA-Z ]+">  
@@ -111,11 +111,11 @@
                     </div>
                     <div class="form-group">
                         <label for="mail">Email :</label>
-                        <input id="mail" type="email" class="form-control border-secondary"  placeholder="exemple@mail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}"></input>
+                        <input id="mail" type="email" class="form-control border-secondary"  placeholder="exemple@mail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}">
                     </div>
                     <div class="form-group">
                         <label for="address">Adresse :</label>
-                        <input type="text" id="address" class="form-control border-secondary" rows="3"  placeholder="Détaillée, 25 rue exemple..." pattern="[0-9]{1,3}[ ][A-Za-z0-9À-ž' -]{5,}" required></input>
+                        <input type="text" id="address" class="form-control border-secondary"  placeholder="Détaillée, 25 rue exemple..." pattern="[0-9]{1,3}[ ][A-Za-z0-9À-ž' -]{5,}" required>
                     </div>
                     <div class="form-group">
                         <label for="city">Ville :</label>
@@ -127,14 +127,14 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-5 text-primary font-weight-bold ml-auto">
-                    <legend class="my-3 my-lg-5">Détails de paiement</legend>
+                    <h1 class="my-3 my-md-5 h6">Détails de paiement</h1>
                     <div class="form-check h5">
                         <input type="radio" id="paypal" class="form-check-input" name="radio" value="option1">
                         <label for="paypal" class="form-check-label"> <i class="fab fa-paypal mx-3"></i> PayPal </label>
                     </div>
                     <div class="form-check h5 my-3">
-                        <input type="radio" id="paypal" class="form-check-input" name="radio" value="option2">
-                        <label for="paypal" class="form-check-label"> <i class="fab fa-cc-visa ml-3"></i> <i class="fab fa-cc-mastercard mx-1"></i>  Carte bancaire </label>
+                        <input type="radio" id="bank" class="form-check-input" name="radio" value="option2">
+                        <label for="bank" class="form-check-label"> <i class="fab fa-cc-visa ml-3"></i> <i class="fab fa-cc-mastercard mx-1"></i>  Carte bancaire </label>
                     </div>
                     <div class="form-check h5 my-3">
                         <input type="radio" id="Gpay" class="form-check-input" name="radio" value="option3">
@@ -207,6 +207,6 @@
            });
         });
     </script>
-    <script type="text/javascript" src="./src/cart.js"></script>
+    <script src="./src/cart.js"></script>
 </body>
 </html>
