@@ -136,6 +136,31 @@ let productPrices = [];
 let totalCost = 0;
 let orderInformations = {};
 
+
+var regName = /^[A-Z][A-Za-z\é\è\ê\-\']+$/;
+var regFirstNameAndCity = /^[A-Z][A-Za-z\é\è\ê\-]+$/;
+var regMail = /(^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$)/;
+var regAddress = /[0-9]{1,3}[ ][A-Za-z0-9À-ž' -]{5,}/;
+var regPostal = /^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/;
+
+
+function isValid (element, reg) {
+    document.getElementById(element).addEventListener('input', function() {
+        if (reg.test(document.forms["contact-form"][element].value) == true) {
+            document.getElementById("order-button").disabled = false;
+        } else {
+            document.getElementById("order-button").disabled = true;
+        }
+    });
+};
+
+    isValid("last-name", regName);
+    isValid("first-name", regFirstNameAndCity);
+    isValid("mail", regMail);
+    isValid("address", regAddress);
+    isValid("city", regFirstNameAndCity);
+    isValid("postal", regPostal);
+
 /* On click event for the submit button of the form */
 document.getElementById("contact-form").addEventListener('submit', function(e) {
     let contactObject = {};
@@ -201,9 +226,4 @@ function calculateTotalCost(object) {
     for (let i in productPrices) {
         totalCost += productPrices[i];  
     }
-}
-
-
-
-  
-
+};
