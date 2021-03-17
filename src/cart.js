@@ -145,21 +145,34 @@ var regPostal = /^((0[1-9])|([1-8][0-9])|(9[0-8])|(2A)|(2B))[0-9]{3}$/;
 
 
 function isValid (element, reg) {
-    document.getElementById(element).addEventListener('input', function() {
-        if (reg.test(document.forms["contact-form"][element].value) == true) {
-            document.getElementById("order-button").disabled = false;
-        } else {
-            document.getElementById("order-button").disabled = true;
-        }
-    });
+    if (reg.test(document.forms["contact-form"][element].value) == true) {
+        document.getElementById("order-button").disabled = false;
+        document.getElementById("error").innerHTML = "";
+    } else {
+        document.getElementById("order-button").disabled = true;
+        document.getElementById("error").innerHTML = "Champ incorrect";        
+    };
 };
 
+document.getElementById("last-name").addEventListener('input', function(event) {
     isValid("last-name", regName);
+})
+document.getElementById("first-name").addEventListener('input', function(event) {
     isValid("first-name", regFirstNameAndCity);
+})
+document.getElementById("mail").addEventListener('input', function(event) {
     isValid("mail", regMail);
+})
+document.getElementById("address").addEventListener('input', function(event) {
     isValid("address", regAddress);
+})
+document.getElementById("city").addEventListener('input', function(event) {
     isValid("city", regFirstNameAndCity);
+})
+document.getElementById("postal").addEventListener('input', function(event) {
     isValid("postal", regPostal);
+})
+
 
 /* On click event for the submit button of the form */
 document.getElementById("contact-form").addEventListener('submit', function(e) {
