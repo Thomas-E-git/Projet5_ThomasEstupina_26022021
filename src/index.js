@@ -17,14 +17,26 @@ request.send();
 
 /* Set fillCameraDetails function to add details in HTML index.html */
 function fillCameraDetails(array) {
+    let cameraList = "";
     for (let i in array) {
-        cameraNames[i].innerHTML = array[i].name;
-        cameraDescriptions[i].innerHTML = array[i].description;
-        cameraPrices[i].innerHTML = array[i].price / 100 + ",00";
-        cameraPics[i].src = array[i].imageUrl;
-        cameraSelect[i].setAttribute('href', "product.html?id=" + array[i]._id);
-    }
+        cameraList += `
+        <div class="col-12 col-md-6 col-lg-4 mt-5">
+            <div class="card bg-primary text-secondary">
+                <img class="camera-picture" src="${array[i].imageUrl}" alt="premier modèle de Caméra vintage">
+                <div class="card-body text-center">
+                    <h2 class="card-title font-weight-bold mb-3 camera-name text-uppercase" id="camera-name-0">${array[i].name}</h2>
+                    <p class="card-text camera-description text-left h6" id="camera-description-0">${array[i].description}</p>
+                    <p class="card-text h5 font-weight-bold text-right my-3 text-tertiary" id="camera-price-0"><span class="camera-price"></span>${array[i].price / 100 + ",00"}<span> €</span></p>
+                    <a href="${"product.html?id=" + array[i]._id}" class="btn btn-secondary text-primary font-weight-bold my-1 col-sm-10 mx-auto stretched-link">Sélectionner la caméra</a>                    
+                </div>
+            </div>
+        </div>
+        `
+    };
+    document.getElementById("cameraList").innerHTML = cameraList;
 }
+
+
 
 /* Prevent default's task of the navbar's submit button */
 const searchSubmitButton = document.getElementById("search-submit")
